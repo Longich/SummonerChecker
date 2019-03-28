@@ -1,0 +1,9 @@
+<h1>Summoner Checker</h1>
+<div class="container">
+<%= form_tag({ controller: :summoner, action: :show },
+                method: :get, id: :snsearch, class: :search) do %>
+  <%= text_field_tag :summoner_name, 'Summoner Name' %>
+  <%= submit_tag '検索' %>
+<% end %>
+
+</div>

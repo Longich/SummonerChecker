@@ -1,5 +1,5 @@
 module SummonerHelper
-  def search
-    
+  def search(summoner_name)
+    "summoner-helper-search-sample"
   end
 end
