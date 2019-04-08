@@ -1,2 +1,9 @@
-<div>summoner-show</div>
+<div>Summoner's Information</div>
+<h2><%= @summoner["name"] %></h2>
+<ul>
+  <li>SummonerLevel : <%= @summoner["summonerLevel"] %></li>
+  <li>Rank Solo : <%= @rank_data["tier"] + " " + @rank_data["rank"]%></li>
+  <li>Win - Loss : <%= @rank_data["wins"].to_s + " - " + @rank_data["losses"].to_s %></li>
+</ul>
 <div><%= @summoner %></div>
+<div><%= @rank_data %></div>

@@ -2,8 +2,20 @@
 <div class="container">
 <%= form_tag({ controller: :summoner, action: :show },
                 method: :get, id: :snsearch, class: :search) do %>
-  <%= text_field_tag :summoner_name, 'Summoner Name' %>
+  <%= text_field_tag :summoner_name, '', placeholder: 'Summoner Name' %>
   <%= submit_tag '検索' %>
 <% end %>
-
+<p>Free Champions</p>
+<ul class="free-champs">
+  <% @free_champions.each do |champ| %>
+    <li><%= champ %></li>
+  <% end %>
+</ul>
+<p>for new players</p>
+<ul class="free-champs">
+  <% @champ_for_new_player.each do |champ| %>
+   <li><%= champ %></li>
+  <% end %>
+</ul>
+<div><%= @data %></div>
 </div>
