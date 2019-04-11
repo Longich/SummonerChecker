@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: '1.1.1'
+  rune: '2.2.2'
+  mastery: '3.3.3'
+  summoner: '4.4.4'
+  champion: '4.4.4'
+  profileicon: '1.1.1'
+  map: '1.1.1'
+  language: '2.2.2'
+  sticker: '3.3.3'
+

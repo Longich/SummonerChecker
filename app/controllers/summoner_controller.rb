@@ -7,11 +7,13 @@ class SummonerController < ApplicationController
     end
     league_client = LeaguedataClient.new
     @summoner = league_client.find_by_sn(summoner_name)
-    rank_data = league_client.fetch_position(@summoner["id"])[0]
-    if rank_data.nil? 
+    rank_data = league_client.fetch_position(@summoner["id"])
+    p @summoner
+    p rank_data
+    if rank_data[0].nil? 
       @rank_data = {"tier" => 'Unrank', "rank" => '', "wins" => '', "losses" => ''}
     else
-      @rank_data = rank.data
+      @rank_data = rank_data[0]
     end
   end
 

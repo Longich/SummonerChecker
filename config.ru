@@ -2,4 +2,6 @@
 
 require_relative 'config/environment'
 
+p LeaguedataClient.check_latest
+
 run Rails.application

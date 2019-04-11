@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190408112244) do
+ActiveRecord::Schema.define(version: 20190411165610) do
 
   create_table "champions", force: :cascade do |t|
+    t.string "champ_id"
     t.string "name"
     t.integer "champ_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string "item"
+    t.string "rune"
+    t.string "mastery"
+    t.string "summoner"
+    t.string "champion"
+    t.string "profileicon"
+    t.string "map"
+    t.string "language"
+    t.string "sticker"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
