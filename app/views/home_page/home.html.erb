@@ -1,20 +1,25 @@
 <h1>Summoner Checker</h1>
 <div class="container">
-<%= form_tag({ controller: :summoner, action: :show },
-                method: :get, id: :snsearch, class: :search) do %>
-  <%= text_field_tag :summoner_name, '', placeholder: 'Summoner Name' %>
-  <%= submit_tag '検索' %>
-<% end %>
-<p>Free Champions</p>
-<ul class="free-champs">
-  <% @free_champions.each do |champ| %>
-    <li><%= champ %></li>
+  <%= form_tag({ controller: :summoner, action: :show },
+                  method: :get, id: :snsearch, class: [:search, "input-group"]) do %>
+    <%= text_field_tag :summoner_name, '', placeholder: 'Summoner Name', class: "form-control search-input" %>
+    <span class="input-group-btn"><%= submit_tag 'Search', class: "btn btn-default" %></span>
   <% end %>
-</ul>
-<p>for new players</p>
-<ul class="free-champs">
-  <% @champ_for_new_player.each do |champ| %>
-   <li><%= champ %></li>
-  <% end %>
-</ul>
+  <hr>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Free Champions</div>
+    <div class="row panel-body">
+      <% @free_champions.each do |champ| %>
+        <div class="text-center col-xs-2"><%= champ %></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">For new players</div>
+    <div class="row panel-body">
+      <% @champ_for_new_player.each do |champ| %>
+      <div class="text-center col-xs-2"><%= champ %></div>
+      <% end %>
+    </div>
+  </div>
 </div>

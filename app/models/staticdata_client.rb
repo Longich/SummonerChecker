@@ -1,5 +1,5 @@
 class StaticdataClient
-
+  
   def fetch_latest_version
     uri = URI.parse("https://ddragon.leagueoflegends.com/realms/jp.json")
     return_data = Net::HTTP.get(uri)

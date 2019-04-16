@@ -2,6 +2,8 @@
 
 require_relative 'config/environment'
 
-p LeaguedataClient.check_latest
+static_client = StaticdataClient.new
+Version.new.check_latest_champ_version_and_update static_client
+Champion.load static_client, Version.last[:champion]
 
 run Rails.application

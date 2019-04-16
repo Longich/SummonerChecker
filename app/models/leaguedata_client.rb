@@ -17,12 +17,6 @@ class LeaguedataClient
     fetch_data league_url
   end
 
-  def self.check_latest
-    uri = URI.parse("https://ddragon.leagueoflegends.com/realms/jp.json")
-    return_data = Net::HTTP.get(uri)
-    JSON.parse(return_data)
-  end
-
   def fetch_data(api_url)
     key = ENV["RIOT_API_KEY"]
     url = api_url + "?api_key=#{key}"

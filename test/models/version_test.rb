@@ -15,6 +15,4 @@ class VersionTest < ActiveSupport::TestCase
     version.check_latest_champ_version_and_update
     assert_equal latest_ver["champion"], Version.last[:champion] 
   end
-
-
 end

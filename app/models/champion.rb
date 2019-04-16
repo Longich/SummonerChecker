@@ -3,13 +3,11 @@ class Champion < ApplicationRecord
   validates :champ_key, presence: true
 
   class << self
-    def load
-      uri = URI.parse("http://ddragon.leagueoflegends.com/cdn/8.24.1/data/ja_JP/champion.json")
-      return_data = Net::HTTP.get(uri)
-      json_data = JSON.parse(return_data)
+    def load(static_client, version)
+      json_data = static_client.fetch_champ_data version
       json_data["data"].each do |key, champ|
-        if (champ = Champion.find_by(champ_id: key)) 
-          champ.update_attributes(name: champ["name"], champ_key: champ["key"])
+        if (champion = Champion.find_by(champ_id: key)) 
+          champion.update(name: champ["name"], champ_key: champ["key"])
         else
           Champion.create(champ_id: key, name: champ["name"], champ_key: champ["key"])
         end
